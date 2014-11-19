@@ -27,7 +27,6 @@ void printHelp()
            "Operations: +, -, *, / -- only binary ones.\n");
 }
 
-//Работает только если лексемы разделены ровно одним пробелом!!!
 char ** parceLexems(char *line, int *lexems_number)
 {
     const int max_lexems_number = 10000;

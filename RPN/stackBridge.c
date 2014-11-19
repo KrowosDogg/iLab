@@ -13,7 +13,7 @@ void stackBridge_push (stackBridge *S, int value)
 int stackBridge_pop (stackBridge *S)
 {
     if (stackBridge_is_empty(S))
-        return -1; //BUG. Need to throw exception here.
+        return -1;
     int value = stackBridge_top(S);
 
     struct List *temp = S->listBegin;
@@ -35,7 +35,7 @@ int stackBridge_is_empty (const stackBridge *S)
 
 int stackBridge_is_full (const stackBridge *S)
 {
-    return 0; //—читаем, что никогда не переполн€етс€
+    return 0;
 }
 
 void stackBridge_init (stackBridge *S)

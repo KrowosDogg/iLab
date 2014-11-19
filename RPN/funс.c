@@ -9,7 +9,6 @@
 
 int IsNumber (char *lexem)
 {
-    //FIXME in future -- correctness of number is not checked absolutely
     return lexem[0] <= '9' && lexem[0] >= '0';
 }
 
