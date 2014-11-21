@@ -4,18 +4,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef double tData;
+
 struct myStack_t
 {
-    int *A;
+    tData *A;
     int allocated_size; //max number of ints before the next allocation
     int number;
 };
 
 typedef struct myStack_t myStack;
 
-void myStack_push (myStack *S, int value);
-int myStack_pop (myStack *S);
-int myStack_top(const myStack *S);
+void myStack_push (myStack *S, tData value);
+tData myStack_pop (myStack *S);
+tData myStack_top(const myStack *S);
 
 int myStack_is_empty (const myStack *S);
 int myStack_is_full (const myStack *S);

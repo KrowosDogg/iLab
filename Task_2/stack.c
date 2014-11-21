@@ -1,11 +1,11 @@
 #include "stack.h"
 
-void myStack_push (myStack *S, int value)
+void myStack_push (myStack *S, tData value)
 {
     if (S->allocated_size == 0)
     {
         S->allocated_size = 100;
-        S->A = (int *)calloc(S->allocated_size, sizeof(int));
+        S->A = (int *)calloc(S->allocated_size, sizeof(tData));
         if (S->A == NULL)
         {
             printf("Memory not given... Can't continue algorithm.\n");
@@ -15,7 +15,7 @@ void myStack_push (myStack *S, int value)
     else if (myStack_is_full(S))
     {
         S->allocated_size *= 2;
-        S->A = (int *)realloc(S->A, S->allocated_size*sizeof(int));
+        S->A = (int *)realloc(S->A, S->allocated_size*sizeof(tData));
         if (S->A == NULL)
         {
             printf("Memory not given... Can't continue algorithm.\n");
@@ -26,16 +26,16 @@ void myStack_push (myStack *S, int value)
     S->number ++;
 }
 
-int myStack_pop (myStack *S)
+tData myStack_pop (myStack *S)
 {
     if (myStack_is_empty(S))
         return -1;
     S->number --;
-    int value = S->A[S->number];
+    tData value = S->A[S->number];
     return value;
 }
 
-int myStack_top(const myStack *S)
+tData myStack_top(const myStack *S)
 {
     return S->A[S->number - 1];
 }
